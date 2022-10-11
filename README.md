@@ -1,1 +1,1 @@
-# golang-smart-contract
+# golang
