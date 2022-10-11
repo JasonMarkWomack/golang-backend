@@ -1,6 +1,8 @@
 package main
 
 import (
+	"app/player"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -9,8 +11,7 @@ func hello(c *fiber.Ctx) error {
 }
 
 func Routers(app *fiber.App) {
-	app.Get("/players", player.GetPlayers)
-	app.Get("/player/:id", player.GetPlayer)
+	app.Get("/player", player.GetPlayer)
 	app.Post("/player", player.SavePlayer)
 	app.Delete("/player/:id", player.DeletePlayer)
 	app.Put("/player/:id", player.UpdatePlayer)

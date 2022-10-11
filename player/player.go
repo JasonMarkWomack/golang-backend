@@ -29,12 +29,6 @@ func InitialMigration() {
 	DB.AutoMigrate(&Player{})
 }
 
-func GetPlayers(c *fiber.Ctx) error {
-	var players []Player
-	DB.Find(&players)
-	return c.JSON(&players)
-}
-
 func GetPlayer(c *fiber.Ctx) error {
 	id := c.Params("id")
 	var player Player
